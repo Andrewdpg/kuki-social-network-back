@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1531C294-EAE7-70C1-05E1-302326A1161F" name="Tag">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>9E09BA2A-52C4-A093-5552-22E31DD86779</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="name" id="42F4047F-F42A-2BC4-2FF9-654615D34531">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>0E44E53C-95D7-9D48-1F9E-F583408FD0BF</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7E8A62C-00AE-4881-B061-434D4CC07FD6" name="Tag_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>71EAC874-7EAE-01EF-DCA8-A7069E9139EB</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="42F4047F-F42A-2BC4-2FF9-654615D34531"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

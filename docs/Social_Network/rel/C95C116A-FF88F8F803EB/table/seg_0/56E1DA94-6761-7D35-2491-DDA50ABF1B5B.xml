@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56E1DA94-6761-7D35-2491-DDA50ABF1B5B" name="ingredient">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>D5C8EF3A-D66F-04DA-D27B-4C87D851DF49</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ingredient_id" id="36250D92-2597-CE4D-3825-5D4CB7AC08C1">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>A0BF0FCF-C113-E8DE-3D9A-5DC60D816DE5</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="108D11A2-0813-CDE3-549A-0CE2A7DC0040">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>10B5F02F-2FC6-4037-F300-DDC1BDCEF47C</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>70 CHAR</dataTypeSize>
+<ownDataTypeParameters>70 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nutritional_info" id="931181CA-7017-D6E4-AF74-509BECDE3D04">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>04D32B6A-CD6D-53A3-8091-805DCB400189</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>47823B89-BECE-2D4A-B641-EE3BE6149078</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="photo" id="FBA0BEE2-E7EF-4686-29DF-949A7D2E84FB">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>8FA3BB14-AB86-6E69-FA76-AC02226CAF53</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="unit" id="447DFEF6-8F66-9E6D-4A48-5578FE5EBB82">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>54C3F718-0847-C4BD-84DC-2F1F2CD666A5</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2388D06C-1853-3C91-9EF2-12F6983E2DF2" name="ingredient_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>A66FB665-7136-AD2B-071D-7492D26CEF33</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36250D92-2597-CE4D-3825-5D4CB7AC08C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

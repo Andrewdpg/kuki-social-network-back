@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02B37F5E-29A0-32F0-5320-190EBB7EB4F0" name="day_has_recipes">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="meal_day_day_number" id="3AE0160B-DC92-5709-158A-2CD7CB0CF0A1">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="510CD5C5-165D-59F3-229E-38CB7CD62F4A" referredColumn="8BDF14EC-48F8-F6B0-1BC7-437511DBDFDE"/>
+</associations>
+</Column>
+<Column name="recipe_recipe_id" id="BDF07E27-3031-5609-9C44-64A76667046E">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7D5387AA-8DEC-258D-624D-4CC77D89068E" referredColumn="9138ED96-F4C0-4DC3-E894-21E2D1E34E11"/>
+</associations>
+</Column>
+<Column name="time" id="563EC963-DA72-23EB-7632-58C0991D1DFA">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>96F360CF-AC0F-310E-4C50-984BD4F9CA45</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1A879607-87EA-781E-F11F-351F04A3DFB6" name="day_has_recipes_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AE0160B-DC92-5709-158A-2CD7CB0CF0A1"/>
+<colUsage columnID="BDF07E27-3031-5609-9C44-64A76667046E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF13BB40-0EA9-988F-40E6-980D8E1E2F72" name="day_has_recipes_meal_day_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>6503DAB3-405B-E3E5-2A74-02CD660ADB3C</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3AE0160B-DC92-5709-158A-2CD7CB0CF0A1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="24749122-AA1C-85D5-E0D5-AB08D6D4230B" name="day_has_recipes_recipe_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>6503DAB3-405B-E3E5-2A74-02CD660ADB3C</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BDF07E27-3031-5609-9C44-64A76667046E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

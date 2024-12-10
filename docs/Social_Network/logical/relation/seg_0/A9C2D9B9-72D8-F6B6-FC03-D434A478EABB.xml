@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="planner has days" directorySegmentName="seg_0" id="A9C2D9B9-72D8-F6B6-FC03-D434A478EABB">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:31:11 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<sourcePk>7D754F0E-1FD0-E0F3-CBEC-CC9D1417D918</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>B268D3B5-B7D7-199D-5BDB-D1BEA9E46DF8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>7F2297E6-368A-4175-6572-BE73E4F05ED1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

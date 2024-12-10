@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user follows user" directorySegmentName="seg_0" id="CF387DE5-31B9-B31E-55F4-56F4F2E7562B">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:19:48 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="follow_date" id="0A75299B-E6E3-86FB-23D2-0472FAEBCAAD">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:20:14 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

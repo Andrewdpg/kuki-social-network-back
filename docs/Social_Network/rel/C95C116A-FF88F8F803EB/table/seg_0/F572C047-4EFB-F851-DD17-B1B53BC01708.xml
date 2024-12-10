@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F572C047-4EFB-F851-DD17-B1B53BC01708" name="meal_day">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>7F2297E6-368A-4175-6572-BE73E4F05ED1</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="day_number" id="8BDF14EC-48F8-F6B0-1BC7-437511DBDFDE">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>1965F932-9E42-5973-8921-3F14D9F20F9C</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="meal_planner_planner_id" id="C92CF2C5-B1BC-12A6-A9BE-24FAE539525E">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>5A5C9409-FAE9-3FA3-BD3B-D851796C7989</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AD155C24-DDD0-A432-0304-B0AA8B9EA62D" referredColumn="F6116FCB-F279-D0D7-5B5D-EA8592B52DE6"/>
+</associations>
+</Column>
+<Column name="description" id="D0C8DF71-B7D1-4885-B51A-4BCC4A8FA283">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>DC3D436D-977D-FD32-90C9-B1109E14A09F</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>256</dataTypeSize>
+<ownDataTypeParameters>256,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8C65767-2BFD-F01A-903A-A1AEAEEDB4B5" name="meal_day_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>CA1C3432-F3E6-D728-8E06-031CC66F6A3B</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8BDF14EC-48F8-F6B0-1BC7-437511DBDFDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4A210115-45F7-01E4-1EC0-7CF690B3392D" name="meal_day_meal_planner_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>A9C2D9B9-72D8-F6B6-FC03-D434A478EABB</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C92CF2C5-B1BC-12A6-A9BE-24FAE539525E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

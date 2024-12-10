@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user follows planners" directorySegmentName="seg_0" id="C1B17744-B5D4-B4C4-4852-BBE13D6E5535">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:39:32 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>B268D3B5-B7D7-199D-5BDB-D1BEA9E46DF8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="is_owner" id="94D298EB-8FF8-8CB4-5468-22B24206227E">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-26 23:59:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+</attribute>
+<attribute name="is_saved" id="34EB1B96-D9B4-C577-FB78-5FE3F16BE584">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 00:02:09 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<defaultValue>1</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

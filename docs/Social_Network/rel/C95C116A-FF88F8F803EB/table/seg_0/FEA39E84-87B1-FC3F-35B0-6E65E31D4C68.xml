@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FEA39E84-87B1-FC3F-35B0-6E65E31D4C68" name="recipe_is_categorized">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="recipe_recipe_id" id="9A8E7724-4E29-156B-8745-13487CFD2EB1">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6013C582-3AA0-7326-7F66-7DF15C336930" referredColumn="9138ED96-F4C0-4DC3-E894-21E2D1E34E11"/>
+</associations>
+</Column>
+<Column name="Tag_name" id="BC62039B-97D5-B523-1875-83E4AED8D3F2">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8A045067-8B7C-A10B-BE07-3BCBAC8E7295" referredColumn="42F4047F-F42A-2BC4-2FF9-654615D34531"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43EA3B6C-1617-24FC-4881-B9F46FDAC420" name="recipe_is_categorized_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A8E7724-4E29-156B-8745-13487CFD2EB1"/>
+<colUsage columnID="BC62039B-97D5-B523-1875-83E4AED8D3F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="51FF0D1D-CFB5-FF65-365A-CA53A777EB71" name="recipe_is_categorized_recipe_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>52015A18-432F-2271-7148-F1E0566D3524</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9A8E7724-4E29-156B-8745-13487CFD2EB1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="14230DD1-F421-563E-EA98-D3767A55343B" name="recipe_is_categorized_Tag_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>52015A18-432F-2271-7148-F1E0566D3524</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC62039B-97D5-B523-1875-83E4AED8D3F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9862724E-4FCE-52ED-72D0-1C16080007B3" name="user_saves_recipes">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="user_username" id="6287AFFB-EB84-2383-2790-FF2F9A2A44C4">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1B8F559B-0B32-B460-6616-B6161E33481C" referredColumn="66D5D2FD-C391-2C54-0F3E-6CC98460F5A8"/>
+</associations>
+</Column>
+<Column name="recipe_recipe_id" id="BB1A1C16-5F1C-6204-312B-E4031FADAA78">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="230248AF-C49F-BA68-952D-1D2B6861BA07" referredColumn="9138ED96-F4C0-4DC3-E894-21E2D1E34E11"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E8CB4753-BC3D-E062-1AE9-A834BD34996A" name="user_saves_recipes_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6287AFFB-EB84-2383-2790-FF2F9A2A44C4"/>
+<colUsage columnID="BB1A1C16-5F1C-6204-312B-E4031FADAA78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08097A46-0977-BB97-AEEB-6DC6C333273C" name="user_saves_recipes_user_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>D3F975A0-92C6-EAB2-EEE4-BCECF0A043C8</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6287AFFB-EB84-2383-2790-FF2F9A2A44C4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A6BFA5E-DA9E-DABC-624A-9B1B38097F8D" name="user_saves_recipes_recipe_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>D3F975A0-92C6-EAB2-EEE4-BCECF0A043C8</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BB1A1C16-5F1C-6204-312B-E4031FADAA78"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

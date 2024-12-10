@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="23BADA1D-511D-E4C0-0354-72FBF8E4874E" name="comment">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>784C9217-686C-2868-EA35-DCAE58D694A2</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="comment_id" id="111CA7E1-EB60-0357-A491-9719AA423E74">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>0DA93DDA-3B64-552A-F78C-E0B6CA37DB14</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="content" id="14574AFB-1C4B-895A-9413-180D4AA3AC50">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>EE382D34-4C30-78AA-1B4E-A5569F8C3865</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>512</dataTypeSize>
+<ownDataTypeParameters>512,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="comment_date" id="BCACA9D0-918B-DCE5-A9FA-DE84193CBC78">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>97E9B94F-93CC-055C-4F81-4A31BE4BDD6B</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="recipe_recipe_id" id="19B4463A-99FF-19AB-3842-4D79FF66651D">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>BA955603-6BE2-AC2F-2E13-17F6630771FE</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D8998500-A451-3B7B-EEB8-A28B145ADFB7" referredColumn="9138ED96-F4C0-4DC3-E894-21E2D1E34E11"/>
+</associations>
+</Column>
+<Column name="user_username" id="1B0AE536-9BE6-542E-B284-6EAFA9E4A814">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>B023E219-3A77-AC7B-5374-AD68930AD2EA</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFAD212B-4CEE-E753-70E9-75E707CEBA43" referredColumn="66D5D2FD-C391-2C54-0F3E-6CC98460F5A8"/>
+</associations>
+</Column>
+<Column name="comment_comment_id" id="1C174952-A5BB-4212-A24A-CFDA1FCC2D1B">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>D2C5CD26-7CD0-1994-0AB4-513715A510EF</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="056728EA-8164-6BED-CF58-B607E6E7A570" referredColumn="111CA7E1-EB60-0357-A491-9719AA423E74"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D17D8D05-CF26-85B6-08B1-7FF97A33CBA7" name="comment_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>B0515E6C-7144-38C2-F80B-894B405D6714</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="111CA7E1-EB60-0357-A491-9719AA423E74"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE7CB3A7-DE49-629D-D862-20D0910CB576" name="comment_recipe_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>D3B87D05-73E1-6F7E-3C88-580D39F2510E</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="19B4463A-99FF-19AB-3842-4D79FF66651D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF044F48-88FC-A959-3ADD-CE8E84627E2F" name="comment_comment_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>A5EBA389-9B18-7737-345E-6BB55EF91C2C</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1C174952-A5BB-4212-A24A-CFDA1FCC2D1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="32C6240F-C0C2-AF40-DEAE-5A73D2FF92C5" name="comment_user_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>2D8DABF2-5D23-5051-DBEC-0D73B88BBD5E</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1B0AE536-9BE6-542E-B284-6EAFA9E4A814"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

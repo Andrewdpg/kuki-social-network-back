@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6DBED9D2-3672-A4E8-8E75-95F0C2201DFF" name="user_follows_user">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="user_username" id="87D72495-5C3F-4B3F-D8DA-BC9E72C7AB37">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C5FA63C-C209-78AA-205F-CA958FCFDAD3" referredColumn="66D5D2FD-C391-2C54-0F3E-6CC98460F5A8"/>
+</associations>
+</Column>
+<Column name="user_username1" id="F0D63785-37A4-7276-639B-CBDB9BDCA29C">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1D8CD9CA-7BB6-B3B1-A6AC-C8C087D0CEFB" referredColumn="66D5D2FD-C391-2C54-0F3E-6CC98460F5A8"/>
+</associations>
+</Column>
+<Column name="follow_date" id="888F372A-A906-AD00-2197-A789A36CBB45">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>0A75299B-E6E3-86FB-23D2-0472FAEBCAAD</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,6,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7CF29BB-7146-6415-898B-83846CEB47FB" name="user_follows_user_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87D72495-5C3F-4B3F-D8DA-BC9E72C7AB37"/>
+<colUsage columnID="F0D63785-37A4-7276-639B-CBDB9BDCA29C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4698ADF3-BE62-77A1-32BD-02886A418BB7" name="user_follows_user_user_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>CF387DE5-31B9-B31E-55F4-56F4F2E7562B</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="87D72495-5C3F-4B3F-D8DA-BC9E72C7AB37"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="227ACC7F-E8B8-8BAE-BF77-D4A99D6FD885" name="user_follows_user_user_FKv1">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>CF387DE5-31B9-B31E-55F4-56F4F2E7562B</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0D63785-37A4-7276-639B-CBDB9BDCA29C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

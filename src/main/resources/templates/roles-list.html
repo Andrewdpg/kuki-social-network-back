@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head (title='Lista de Roles - Kuki')}"></head>
+<body class="min-h-screen bg-gradient-custom flex flex-col">
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center">
+                <span class="material-icons text-orange-500 text-3xl mr-2">security</span>
+                <h1 class="text-3xl font-bold text-gray-900">Gestión de Roles</h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+            <div class="flex justify-start mb-6">
+                <div class="px-4 py-5 sm:px-6">
+                    <a th:href="@{/admin/user}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        <span class="material-icons align-middle mr-1">arrow_back</span>
+                        Lista de usuarios
+                    </a>
+                </div>
+                <div class="px-4 py-5 sm:px-6">
+                    <a th:href="@{/admin/role/create}" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        <span class="material-icons align-middle mr-1">add</span> Nuevo Rol
+                    </a>
+                </div>
+            </div>
+            <div th:if="${error}" class="max-w-lg mx-auto bg-red-100 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">¡Error!</strong>
+                <span class="block sm:inline" th:text="${error}">Mensaje de error</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg th:onclick="this.parentElement.style.display='none'" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.95 5.05a.75.75 0 0 1 1.06 1.06L11.06 10l4.95 4.95a.75.75 0 1 1-1.06 1.06L10 11.06l-4.95 4.95a.75.75 0 0 1-1.06-1.06L8.94 10 4.99 5.05a.75.75 0 0 1 1.06-1.06L10 8.94l4.95-4.95z"></path>
+                    </svg>
+                </span>
+            </div>
+            <div th:if="${error}" class="border-t border-gray-200"></div>
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    <tr th:each="role : ${roles}">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500" th:text="${role.id}">ID</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900" th:text="${role.name}">Name</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                            <a th:href="@{/admin/role/{roleId}(roleId=${role.id})}" class="text-orange-600 hover:text-orange-900 mr-3">
+                                <span class="material-icons align-middle">settings</span>
+                            </a>
+                            <form th:action="@{/admin/role/{roleId}(roleId=${role.id})}" method="post" class="inline">
+                                <input type="hidden" name="_method" value="delete" />
+                                <button type="submit" class="text-red-600 hover:text-red-900">
+                                    <span class="material-icons align-middle">delete</span>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

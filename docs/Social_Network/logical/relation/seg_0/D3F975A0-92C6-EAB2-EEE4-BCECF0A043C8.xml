@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user saves recipes" directorySegmentName="seg_0" id="D3F975A0-92C6-EAB2-EEE4-BCECF0A043C8">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:42:09 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9BE623FE-33C2-47EA-4AD1-3A41AEBA23AC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

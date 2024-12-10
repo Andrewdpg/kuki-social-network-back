@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="Social_Network" id="09EF7A7E-5959-81AC-0C86-B859C0DE4E1D" version="3.5">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 20:23:03 UTC</createdTime>
+<ownerDesignName>[appname]_ER_MODEL</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>09EF7A7E-5959-81AC-0C86-B859C0DE4E1D</designId>
+</OSDM_Design>

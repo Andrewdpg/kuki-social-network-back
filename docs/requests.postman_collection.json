@@ -1,0 +1,1464 @@
+{
+	"info": {
+		"_postman_id": "e97aac92-c602-4f06-b434-9a6c0c9e7e0d",
+		"name": "auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32375230",
+		"_collection_link": "https://encora-sunflowers.postman.co/workspace/Sunflowers-compunet~ff714d80-2614-4faf-aa8c-0cf8c2f75e38/collection/32375230-e97aac92-c602-4f06-b434-9a6c0c9e7e0d?action=share&source=collection_link&creator=32375230"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var extractedValue = jsonData.token;\r",
+							"\r",
+							"if (extractedValue) {\r",
+							"    pm.globals.set(\"authToken\", extractedValue);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"user\",\r\n    \"password\":\"User123*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/auth/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var extractedValue = jsonData.token;\r",
+							"\r",
+							"if (extractedValue) {\r",
+							"    pm.globals.set(\"authToken\", extractedValue);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"user3\",\r\n    \"fullName\":\"asgiuas\",\r\n    \"password\":\"User123*\",\r\n    \"email\":\"user78xh1g3@hgchgfhl.com\",\r\n    \"country\":\"CO\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/auth/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"  const responseData = pm.response.json();\r",
+							"  pm.expect(responseData).to.not.be.empty;\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Country object contains required fields\", function () {\r",
+							"  const responseData = pm.response.json();\r",
+							"  \r",
+							"  pm.expect(responseData).to.be.an('array');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Country object has correct structure\", function () {\r",
+							"  const responseData = pm.response.json();\r",
+							"  \r",
+							"  pm.expect(responseData).to.be.an('array');\r",
+							"  responseData.forEach(function(country) {\r",
+							"    pm.expect(country).to.be.an('object');\r",
+							"    pm.expect(country).to.have.property('code').that.is.a('string');\r",
+							"    pm.expect(country).to.have.property('name').that.is.a('string');\r",
+							"  });\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/country",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"country"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get comments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/comment/recipe/6a5f043c-852e-4aeb-ba8d-50ab5fff3420",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"recipe",
+						"6a5f043c-852e-4aeb-ba8d-50ab5fff3420"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get subcomments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/comment/539b8afa-ec2d-4d29-8376-fa121894101e",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"539b8afa-ec2d-4d29-8376-fa121894101e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/comment/{{commentId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"{{commentId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit comment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\":\"akjsdfhaksdjfhakjsdfhalksjdfhalkjsdfhaksldfhalskjddfhal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/comment/{{commentId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"{{commentId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create comment",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var extractedValue = jsonData.commentId;\r",
+							"\r",
+							"if (extractedValue) {\r",
+							"    pm.collectionVariables.set(\"commentId\", extractedValue);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"Hola muchachos ccomo están\",\r\n    \"recipeId\": \"6a5f043c-852e-4aeb-ba8d-50ab5fff3420\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/comment/recipe/6a5f043c-852e-4aeb-ba8d-50ab5fff3420",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"comment",
+						"recipe",
+						"6a5f043c-852e-4aeb-ba8d-50ab5fff3420"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create follow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"followedUsername\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/follow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get followers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response status code is 200', function () {",
+							"    pm.expect(pm.response.code).to.equal(200);",
+							"})",
+							"",
+							"pm.test('Content type is application/json', function () {",
+							"    pm.expect(pm.response.headers.get('Content-Type')).to.include('application/json');",
+							"})",
+							"",
+							"pm.test('Response has the required fields', function () {",
+							"    const responseData = pm.response.json();",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.all.keys('totalElements', 'totalPages', 'size', 'content', 'number', 'sort', 'first', 'last', 'numberOfElements', 'pageable', 'empty');",
+							"})",
+							"",
+							"pm.test('Content array should not be empty', function () {",
+							"    const responseData = pm.response.json();",
+							"    pm.expect(responseData.content).to.be.an('array').that.is.not.empty;",
+							"})",
+							"",
+							"pm.test('Page number, page size, offset, paged, and unpaged are as expected', function () {",
+							"    const responseData = pm.response.json();",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.pageable.pageNumber).to.equal(0);",
+							"    pm.expect(responseData.pageable.pageSize).to.equal(10);",
+							"    pm.expect(responseData.pageable.offset).to.equal(0);",
+							"    pm.expect(responseData.pageable.paged).to.be.true;",
+							"    pm.expect(responseData.pageable.unpaged).to.be.false;",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/follow/followers?username=admin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"follow",
+						"followers"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get following",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"  pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the structure of the response object\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('totalElements');",
+							"    pm.expect(responseData).to.have.property('totalPages');",
+							"    pm.expect(responseData).to.have.property('size');",
+							"    pm.expect(responseData).to.have.property('content');",
+							"    pm.expect(responseData).to.have.property('number');",
+							"    pm.expect(responseData).to.have.property('sort');",
+							"    pm.expect(responseData).to.have.property('first');",
+							"    pm.expect(responseData).to.have.property('last');",
+							"    pm.expect(responseData).to.have.property('numberOfElements');",
+							"    pm.expect(responseData).to.have.property('pageable');",
+							"    pm.expect(responseData).to.have.property('empty');",
+							"});",
+							"",
+							"",
+							"pm.test(\"TotalElements and totalPages are non-negative integers\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.totalElements).to.be.a('number').and.to.be.at.least(0);",
+							"    pm.expect(responseData.totalPages).to.be.a('number').and.to.be.at.least(0);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content array is present and not empty\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.content).to.exist.and.to.be.an('array').that.is.not.empty;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/follow/following?username=user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"follow",
+						"following"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detele follow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"  pm.expect(pm.response.code).to.equal(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"followedUsername\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/follow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"follow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create ingredient",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get ingredient",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get ingredients",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update ingredient",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete ingredient",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get ingredient by name",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create mealday",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var extractedValue = jsonData.day;",
+							"",
+							"if (extractedValue) {",
+							"    pm.globals.set(\"mealday\", extractedValue);",
+							"}",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('day');",
+							"    pm.expect(responseData).to.have.property('description');",
+							"    pm.expect(responseData).to.have.property('mealPlannerId');",
+							"    pm.expect(responseData).to.have.property('recipes');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Day is a non-negative integer\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.day).to.be.a('number');",
+							"    pm.expect(responseData.day).to.be.at.least(0, \"Day should be a non-negative integer\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"MealPlannerId is a non-empty string\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.mealPlannerId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Value should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Recipes should be an array and not empty\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.recipes).to.be.an('array').and.to.have.lengthOf.at.least(1, \"Recipes should not be empty\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"day\":4,\r\n    \"description\":\"alsdhflakjsdhfkajdfkajshgfa\",\r\n    \"recipeIds\":[\r\n        \"6a5f043c-852e-4aeb-ba8d-50ab5fff3420\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/planner/a40ac843-fe53-4980-a64c-f9148aecdb83/day",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"a40ac843-fe53-4980-a64c-f9148aecdb83",
+						"day"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update mealday",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var extractedValue = jsonData.day;\r",
+							"\r",
+							"if (extractedValue) {\r",
+							"    pm.globals.set(\"mealday\", extractedValue);\r",
+							"}",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Day field should exist and be a number\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.day).to.exist;",
+							"    pm.expect(responseData.day).to.be.a('number');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Description field should exist and be a string\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.description).to.be.a('string');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Ensure that mealPlannerId is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.mealPlannerId).to.be.a('string').and.to.have.lengthOf.at.least(1, \"mealPlannerId should be a non-empty string\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"day\":1,\r\n    \"description\":\"hola\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/planner/a40ac843-fe53-4980-a64c-f9148aecdb83/day/{{mealday}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"a40ac843-fe53-4980-a64c-f9148aecdb83",
+						"day",
+						"{{mealday}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search mealdays",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the content array\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.content).to.exist.and.to.be.an('array');",
+							"    responseData.content.forEach(function(item) {",
+							"        pm.expect(item).to.be.an('object');",
+							"        pm.expect(item.day).to.exist.and.to.be.a('number');",
+							"        pm.expect(item.description).to.exist.and.to.be.a('string');",
+							"        pm.expect(item.mealPlannerId).to.exist.and.to.be.a('string');",
+							"        pm.expect(item.recipes).to.exist.and.to.be.an('array');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content array is present and empty\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.content).to.exist.and.to.be.an('array').that.is.not.empty;",
+							"});",
+							"",
+							"",
+							"pm.test(\"Total elements, pages, size, number, and number of elements are all 0\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData.totalElements).to.equal(4);",
+							"    pm.expect(responseData.totalPages).to.equal(1);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"aklajshdfkla fajsf\",\r\n    \"description\":\"alsdhflakjsdhfkajdfkajshgfa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/planner/a40ac843-fe53-4980-a64c-f9148aecdb83/day",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"a40ac843-fe53-4980-a64c-f9148aecdb83",
+						"day"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete mealday",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/planner/a40ac843-fe53-4980-a64c-f9148aecdb83/day/{{mealday}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"a40ac843-fe53-4980-a64c-f9148aecdb83",
+						"day",
+						"{{mealday}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create planner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"var extractedValue = jsonData.id;",
+							"",
+							"if (extractedValue) {",
+							"    pm.globals.set(\"plannerId\", extractedValue);",
+							"}",
+							"pm.test(\"Response status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('id');",
+							"    pm.expect(responseData).to.have.property('name');",
+							"    pm.expect(responseData).to.have.property('description');",
+							"    pm.expect(responseData).to.have.property('isPublic');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Name is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Description is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.description).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Description should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"IsPublic is a boolean value\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.isPublic).to.be.a('boolean');",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"aklajshdfkla fajsf\",\r\n    \"description\":\"alsdhflakjsdhfkajdfkajshgfa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/planner",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update planner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var extractedValue = jsonData.id;\r",
+							"\r",
+							"if (extractedValue) {\r",
+							"    pm.collectionVariables.set(\"plannerId\", extractedValue);\r",
+							"}",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.expect(pm.response.code).to.equal(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content type is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields - id, name, description, and isPublic\", function () {",
+							"  const responseData = pm.response.json();",
+							"",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.id).to.exist;",
+							"  pm.expect(responseData.name).to.exist;",
+							"  pm.expect(responseData.description).to.exist;",
+							"  pm.expect(responseData.isPublic).to.exist;",
+							"});",
+							"",
+							"",
+							"pm.test(\"ID is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  pm.expect(responseData.id).to.be.a('string').and.to.have.lengthOf.at.least(1, \"ID should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Description is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.description).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Description should not be empty\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"aklajshdfkla fffffffffffffff\",\r\n    \"description\":\"alsdhflakjsdhfkajdfkajshgfa\",\r\n    \"isPublic\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/planner/{{plannerId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"{{plannerId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get created planner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Response has the required fields - id, name, description, and isPublic\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData).to.have.property('id');",
+							"    pm.expect(responseData).to.have.property('name');",
+							"    pm.expect(responseData).to.have.property('description');",
+							"    pm.expect(responseData).to.have.property('isPublic');",
+							"});",
+							"",
+							"",
+							"pm.test(\"Id is a non-empty string\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.id).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Id should be a non-empty string\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Description is a non-empty string\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.description).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Description should not be empty\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Verify that the 'isPublic' field is a boolean value\", function () {",
+							"  const responseData = pm.response.json();",
+							"  ",
+							"  pm.expect(responseData).to.be.an('object');",
+							"  pm.expect(responseData.isPublic).to.be.a('boolean');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/planner/{{plannerId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"{{plannerId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search planners",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Response status code is 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Content-Type header is application/json\", function () {",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"Validate the content array\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData.content).to.be.an('array').and.to.have.lengthOf.at.least(1, \"Content array should not be empty\");",
+							"",
+							"    responseData.content.forEach(function(item) {",
+							"        pm.expect(item).to.be.an('object');",
+							"        pm.expect(item.id).to.be.a('string');",
+							"        pm.expect(item.name).to.be.a('string');",
+							"        pm.expect(item.description).to.be.a('string');",
+							"        pm.expect(item.isPublic).to.be.a('boolean');",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"Id, name, and description fields are non-empty strings\", function () {",
+							"    const responseData = pm.response.json();",
+							"",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    responseData.content.forEach(function(item) {",
+							"        pm.expect(item.id).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Id should not be empty\");",
+							"        pm.expect(item.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Name should not be empty\");",
+							"        pm.expect(item.description).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Description should not be empty\");",
+							"    });",
+							"});",
+							"",
+							"",
+							"pm.test(\"IsPublic field is a boolean value\", function () {",
+							"    const responseData = pm.response.json();",
+							"    ",
+							"    pm.expect(responseData).to.be.an('object');",
+							"    pm.expect(responseData.content).to.be.an('array');",
+							"    responseData.content.forEach(function(item) {",
+							"        pm.expect(item.isPublic).to.be.a('boolean');",
+							"    });",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/planner",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete planner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{authToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/v1/planner/{{plannerId}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"planner",
+						"{{plannerId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create recipe",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get recipe by id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "update recipe",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get recipes",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "delete recipe",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get tag",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9E09BA2A-52C4-A093-5552-22E31DD86779" name="Tag">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 21:39:12 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="name" id="0E44E53C-95D7-9D48-1F9E-F583408FD0BF">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 21:39:18 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128</dataTypeSize>
+<ownDataTypeParameters>128,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="71EAC874-7EAE-01EF-DCA8-A7069E9139EB" name="Tag PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 21:39:40 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0E44E53C-95D7-9D48-1F9E-F583408FD0BF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

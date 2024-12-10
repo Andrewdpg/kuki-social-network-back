@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recipe has steps" directorySegmentName="seg_0" id="E81EB740-139C-398E-D13B-103B2B52CE48">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 22:49:20 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<sourcePk>F2688F60-6978-CD21-9C13-AEADE3BA6AE6</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9BE623FE-33C2-47EA-4AD1-3A41AEBA23AC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>336F3005-1E9C-4763-E21F-862AE22EF89A</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

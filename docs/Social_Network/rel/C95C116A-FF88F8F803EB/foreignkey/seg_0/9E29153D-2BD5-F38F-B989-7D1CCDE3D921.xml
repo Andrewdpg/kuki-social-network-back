@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="9E29153D-2BD5-F38F-B989-7D1CCDE3D921" containerWithKeyObject="50D1E6E7-81A8-FC28-0589-4DA6CDCA92BA" localFKIndex="871E54F5-95B8-32B1-E67E-F4D2D60D5056" name="user_likes_recipes_user_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>75E7E68D-EC00-1AB4-193C-76DE4F2695E2</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<referredTableLongName>user</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>06285113-7769-53D1-D8C6-08CF30106AC6</referredTableID>
+<keyObject>56557E5B-BBF6-32A3-7D2C-B8A6593BD98B</keyObject>
+<referredKeyID>56557E5B-BBF6-32A3-7D2C-B8A6593BD98B</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>username</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

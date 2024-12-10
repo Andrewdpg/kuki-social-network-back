@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AD155C24-DDD0-A432-0304-B0AA8B9EA62D" containerWithKeyObject="F572C047-4EFB-F851-DD17-B1B53BC01708" localFKIndex="4A210115-45F7-01E4-1EC0-7CF690B3392D" name="meal_day_meal_planner_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>A9C2D9B9-72D8-F6B6-FC03-D434A478EABB</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<referredTableLongName>meal_planner</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>6F79EB40-FF6A-DB84-3734-0E9D3C3B234B</referredTableID>
+<keyObject>42B8CC7C-4617-A0A5-F964-132077DF7C4D</keyObject>
+<referredKeyID>42B8CC7C-4617-A0A5-F964-132077DF7C4D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>planner_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

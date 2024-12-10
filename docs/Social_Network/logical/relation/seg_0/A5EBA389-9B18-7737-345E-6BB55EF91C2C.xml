@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="responses a comment" directorySegmentName="seg_0" id="A5EBA389-9B18-7737-345E-6BB55EF91C2C">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-26 23:54:56 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<targetPk>B0515E6C-7144-38C2-F80B-894B405D6714</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>784C9217-686C-2868-EA35-DCAE58D694A2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>784C9217-686C-2868-EA35-DCAE58D694A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

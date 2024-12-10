@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FD899D92-5B58-8F64-D67F-289C352FC6BC" name="recipe_has_ingredients">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="recipe_recipe_id" id="F0054226-E981-DD11-AC6A-5D3D2B8A0828">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>50 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="074DEB85-85EA-B346-99F6-763A60CC2D86" referredColumn="9138ED96-F4C0-4DC3-E894-21E2D1E34E11"/>
+</associations>
+</Column>
+<Column name="ingredient_ingredient_id" id="5B6E9E65-8D4D-94C9-88F2-C42176EEA091">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C1643F0-90AA-1D49-E5D9-96C8235C75BE" referredColumn="36250D92-2597-CE4D-3825-5D4CB7AC08C1"/>
+</associations>
+</Column>
+<Column name="quantity" id="2F6E9B1D-3312-039B-2E67-5B72AA2B69ED">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>05FF6475-F990-1FCF-15B4-426B271CC791</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<listOfValues>
+<valueDef value="Kg" description=""/>
+<valueDef value="L" description=""/>
+<valueDef value="cups" description=""/>
+<valueDef value="g" description=""/>
+<valueDef value="mg" description=""/>
+<valueDef value="ml" description=""/>
+<valueDef value="units" description=""/>
+</listOfValues>
+<defaultValue>units</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="44AB6FBF-04AB-9FCC-F46E-38B31F498333" name="recipe_has_ingredients_PK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0054226-E981-DD11-AC6A-5D3D2B8A0828"/>
+<colUsage columnID="5B6E9E65-8D4D-94C9-88F2-C42176EEA091"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A4928F7A-A2DB-54C9-A1D7-96F54E722638" name="recipe_has_ingredients_recipe_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>4294E84C-0818-69DB-695F-6941F3495F45</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0054226-E981-DD11-AC6A-5D3D2B8A0828"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9244C973-ABA3-2BBD-A7FD-3468E16FCCCF" name="recipe_has_ingredients_ingredient_FK">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-27 17:18:42 UTC</createdTime>
+<generatorID>4294E84C-0818-69DB-695F-6941F3495F45</generatorID>
+<ownerDesignName>Social_Network</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5B6E9E65-8D4D-94C9-88F2-C42176EEA091"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

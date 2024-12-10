@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="day has recipes" directorySegmentName="seg_0" id="6503DAB3-405B-E3E5-2A74-02CD660ADB3C">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:33:12 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>7F2297E6-368A-4175-6572-BE73E4F05ED1</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9BE623FE-33C2-47EA-4AD1-3A41AEBA23AC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="time" id="96F360CF-AC0F-310E-4C50-984BD4F9CA45">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:33:32 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

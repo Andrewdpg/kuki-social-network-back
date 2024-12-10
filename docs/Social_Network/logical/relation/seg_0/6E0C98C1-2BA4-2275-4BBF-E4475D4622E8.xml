@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user receives notifications" directorySegmentName="seg_0" id="6E0C98C1-2BA4-2275-4BBF-E4475D4622E8">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:14:29 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<sourcePk>A8074DA9-DE4B-5AED-E645-3A5769472763</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D6635074-E055-6FCD-1CA8-9230C23BCAAA</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,15 @@
+name: Google Java Format Checkstyle
+on: pull_request
+jobs:
+  checkstyle:
+    permissions: write-all
+    name: runner / checkstyle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dbelyaev/action-checkstyle@v1.15.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-pr-review
+          checkstyle_config: ./config/checkstyle/google_checks.xml
+          level: error

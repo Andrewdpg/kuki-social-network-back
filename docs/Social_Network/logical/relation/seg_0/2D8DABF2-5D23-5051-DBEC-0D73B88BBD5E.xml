@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="user comments recipe" directorySegmentName="seg_0" id="2D8DABF2-5D23-5051-DBEC-0D73B88BBD5E">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 22:56:40 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<sourcePk>A8074DA9-DE4B-5AED-E645-3A5769472763</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>27002CB4-F0C7-799C-DA9F-BE2E9248D188</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>784C9217-686C-2868-EA35-DCAE58D694A2</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

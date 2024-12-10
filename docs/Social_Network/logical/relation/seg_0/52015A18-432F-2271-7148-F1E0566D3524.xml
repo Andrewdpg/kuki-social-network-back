@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recipe is categorized" directorySegmentName="seg_0" id="52015A18-432F-2271-7148-F1E0566D3524">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 21:43:23 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>9BE623FE-33C2-47EA-4AD1-3A41AEBA23AC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9E09BA2A-52C4-A093-5552-22E31DD86779</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

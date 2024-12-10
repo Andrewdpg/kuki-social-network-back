@@ -1,0 +1,42 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recipe has ingredients" directorySegmentName="seg_0" id="4294E84C-0818-69DB-695F-6941F3495F45">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 22:19:14 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>9BE623FE-33C2-47EA-4AD1-3A41AEBA23AC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>D5C8EF3A-D66F-04DA-D27B-4C87D851DF49</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="quantity" id="05FF6475-F990-1FCF-15B4-426B271CC791">
+<createdBy>Andrés Parra</createdBy>
+<createdTime>2024-08-17 23:48:22 UTC</createdTime>
+<ownerDesignName>Social_Network</ownerDesignName>
+<engineerTo>
+<item key="C95C116A-C5EB-70EF-29A1-FF88F8F803EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<listOfValues>
+<valueDef value="Kg" description=""/>
+<valueDef value="L" description=""/>
+<valueDef value="cups" description=""/>
+<valueDef value="g" description=""/>
+<valueDef value="mg" description=""/>
+<valueDef value="ml" description=""/>
+<valueDef value="units" description=""/>
+</listOfValues>
+<defaultValue>units</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>
