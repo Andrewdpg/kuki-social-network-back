@@ -8,17 +8,36 @@ COPY gradle /app/gradle
 COPY src /app/src
 
 # Build the project
-RUN  gradle build
+RUN gradle build
 
 # Use the official OpenJDK image as the base image for the runtime
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-# Copy the built JAR file from the build stage
-COPY --from=build /app/build/libs/social-networking-0.0.1-SNAPSHOT.jar app.jar
+# Define build arguments
+ARG DB_USERNAME
+ARG DB_PASSWORD
+ARG DB_NAME
 
-# Expose the port the application runs on
-EXPOSE 8080
+# Install PostgreSQL
+RUN apt-get update && apt-get install -y postgresql
 
-# Run the application
-CMD ["java", "-jar", "app.jar"]
+# Copy the .env file and the init_db.sh script
+COPY .env /app/.env
+COPY init_db.sh /app/init_db.sh
+
+# Make the script executable
+RUN chmod +x /app/init_db.sh
+
+# Initialize PostgreSQL database and create a user and database
+USER postgres
+RUN /app/init_db.sh
+
+# Switch back to the root user
+USER root
+
+# Copy the built application
+COPY --from=build /app/build/libs/*.jar /app/app.jar
+
+# Set the entry point
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
