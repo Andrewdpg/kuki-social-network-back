@@ -23,15 +23,8 @@ COPY init_db.sh /app/init_db.sh
 # Make the script executable
 RUN chmod +x /app/init_db.sh
 
-# Initialize PostgreSQL database and create a user and database
-USER postgres
-RUN /app/init_db.sh
-
-# Switch back to the root user
-USER root
-
 # Copy the built application
 COPY --from=build /app/build/libs/*.jar /app/app.jar
 
-# Set the entry point
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+# Set the entry point to initialize the database and start the application
+ENTRYPOINT ["/bin/bash", "-c", "/app/init_db.sh && java -jar /app/app.jar"]
