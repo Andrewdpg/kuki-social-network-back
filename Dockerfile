@@ -14,16 +14,10 @@ RUN gradle build
 FROM openjdk:17-jdk-slim
 WORKDIR /app
 
-# Define build arguments
-ARG DB_USERNAME
-ARG DB_PASSWORD
-ARG DB_NAME
-
 # Install PostgreSQL
 RUN apt-get update && apt-get install -y postgresql
 
-# Copy the .env file and the init_db.sh script
-COPY .env /app/.env
+# Copy the init-db.sh script
 COPY init_db.sh /app/init_db.sh
 
 # Make the script executable
