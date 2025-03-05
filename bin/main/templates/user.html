@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head (title='Editar Roles de Usuario - Kuki')}"></head>
+<body class="min-h-screen bg-gradient-custom flex flex-col">
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold text-gray-900">Editar Roles de Usuario</h1>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg">
+            <div th:if="${error}" class="max-w-lg mx-auto bg-red-100 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">¡Error!</strong>
+                <span class="block sm:inline" th:text="${error}">Mensaje de error</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg th:onclick="this.parentElement.style.display='none'" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.95 5.05a.75.75 0 0 1 1.06 1.06L11.06 10l4.95 4.95a.75.75 0 1 1-1.06 1.06L10 11.06l-4.95 4.95a.75.75 0 0 1-1.06-1.06L8.94 10 4.99 5.05a.75.75 0 0 1 1.06-1.06L10 8.94l4.95-4.95z"></path>
+                    </svg>
+                </span>
+            </div>
+            <div th:if="${error}" class="border-t border-gray-200"></div>
+            <div class="px-4 py-5 sm:px-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900" th:text="${user.fullName}">Nombre Completo</h3>
+                <p class="mt-1 max-w-2xl text-sm text-gray-500" th:text="${user.email}">email@example.com</p>
+            </div>
+            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                <dl class="sm:divide-y sm:divide-gray-200">
+                    <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Roles Actuales</dt>
+                        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <ul class="border border-gray-200 rounded-md divide-y divide-gray-200">
+                                <li class="pl-3 pr-4 py-3 flex items-center justify-between text-sm" th:each="role : ${user.roles}">
+                                    <div class="w-0 flex-1 flex items-center">
+                                        <span class="ml-2 flex-1 w-0 truncate" th:text="${role.name}">Role Name</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="px-4 py-5 sm:px-6">
+                <form th:action="@{/admin/user/{username}((username=${user.username}))/role}" th:object="${associateRoleToUserRequest}" method="post" class="space-y-4">
+                    <input type="hidden" th:field="*{username}" th:value="${user.username}" />
+                    <div>
+                        <label for="roleId" class="block text-sm font-medium text-gray-700">Asociar Rol:</label>
+                        <select th:field="*{roleId}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                            <option th:each="role : ${unassignedRoles}" th:value="${role.id}" th:text="${role.name}">Role Name</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        <span class="material-icons align-middle mr-1">add</span>
+                        Asociar
+                    </button>
+                </form>
+                <form th:action="@{/admin/user/{username}((username=${user.username}))/role}" th:object="${associateRoleToUserRequest}" method="post" class="mt-6 space-y-4">
+                    <input type="hidden" name="_method" value="delete" />
+                    <input type="hidden" th:field="*{username}" th:value="${user.username}" />
+                    <div>
+                        <label for="roleId" class="block text-sm font-medium text-gray-700">Eliminar Rol:</label>
+                        <select th:field="*{roleId}" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-red-500 focus:border-red-500 sm:text-sm rounded-md">
+                            <option th:each="role : ${user.roles}" th:value="${role.id}" th:text="${role.name}">Role Name</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        <span class="material-icons align-middle mr-1">remove</span>
+                        Eliminar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

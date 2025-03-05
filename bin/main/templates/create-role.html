@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head (title='Crear Rol - Kuki')}"></head>
+<body class="min-h-screen bg-gradient-custom flex flex-col">
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-gray-900">Crear Rol</h1>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <form th:action="@{/admin/role/create}" th:object="${createRoleRequest}" method="post" class="space-y-6 p-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Nombre del Rol:</label>
+                    <input type="text" id="name" th:field="*{name}"
+                           class="mt-1 focus:ring-orange-500 focus:border-orange-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="submit" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        Crear
+                    </button>
+                    <a th:href="@{/admin/role}" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+            <div th:if="${error}" class="border-t border-gray-200"></div>
+            <div th:if="${error}" class="max-w-lg mx-auto bg-red-100 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">¡Error!</strong>
+                <span class="block sm:inline" th:text="${error}">Mensaje de error</span>
+                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                    <svg th:onclick="this.parentElement.style.display='none'" class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <title>Close</title>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.95 5.05a.75.75 0 0 1 1.06 1.06L11.06 10l4.95 4.95a.75.75 0 1 1-1.06 1.06L10 11.06l-4.95 4.95a.75.75 0 0 1-1.06-1.06L8.94 10 4.99 5.05a.75.75 0 0 1 1.06-1.06L10 8.94l4.95-4.95z"></path>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

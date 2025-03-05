@@ -27,4 +27,5 @@ RUN chmod +x /app/init_db.sh
 COPY --from=build /app/build/libs/*.jar /app/app.jar
 
 # Set the entry point to initialize the database and start the application
+USER postgres
 ENTRYPOINT ["/bin/bash", "-c", "/app/init_db.sh && java -jar /app/app.jar"]
